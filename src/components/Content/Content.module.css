@@ -1,0 +1,199 @@
+/* src/components/Content/Content.module.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Card ── */
+.card {
+  font-family: 'DM Sans', sans-serif;
+  background: #0d1220;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(232, 65, 42, 0.7);
+  box-shadow:
+    0 0 0 1px rgba(232, 65, 42, 0.35),
+    0 8px 32px rgba(232, 65, 42, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Image ── */
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  background: #080d1a;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.img {
+  object-fit: contain !important;
+  padding: 12px;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .img {
+  transform: scale(1.05);
+}
+
+/* Discount ribbon */
+.discountRibbon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e8412a;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  z-index: 2;
+}
+
+/* Status pill */
+.statusPill {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 9.5px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.badgePreOrder {
+  background: rgba(232,65,42,0.15);
+  color: #ff7a5c;
+  border: 1px solid rgba(232,65,42,0.35);
+}
+
+.badgeInStock {
+  background: rgba(26,127,55,0.15);
+  color: #4ade80;
+  border: 1px solid rgba(26,127,55,0.35);
+}
+
+.badgeSoldOut {
+  background: rgba(100,100,100,0.15);
+  color: #888;
+  border: 1px solid rgba(100,100,100,0.3);
+}
+
+/* ── Info ── */
+.info {
+  padding: 14px 14px 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #d0d5e0;
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 38px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price {
+  font-size: 17px;
+  font-weight: 500;
+  color: #e8412a;
+  letter-spacing: -0.01em;
+}
+
+.oldPrice {
+  font-size: 11px;
+  color: #4a5060;
+  text-decoration: line-through;
+  font-weight: 300;
+}
+
+.remain {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 300;
+}
+
+.remainDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e8412a;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ── CTA ── */
+.cta {
+  padding: 12px 14px 14px;
+  margin-top: auto;
+}
+
+.buyBtn,
+.detailBtn {
+  width: 100%;
+  height: 38px;
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.buyBtn {
+  background: #e8412a;
+  color: #fff;
+}
+
+.buyBtn:hover {
+  background: #d03520;
+}
+
+.detailBtn {
+  background: transparent;
+  color: #9aa0ad;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.detailBtn:hover {
+  color: #f0ede8;
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.04);
+}

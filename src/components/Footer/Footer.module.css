@@ -1,0 +1,331 @@
+/* src/components/Footer/Footer.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Base ── */
+.footer {
+  background: #0a0f1e;
+  color: #c8cdd8;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 13.5px;
+  line-height: 1.75;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle grid pattern overlay */
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* ── Top accent bar ── */
+.topAccent {
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #e8412a 30%, #ff6b4a 50%, #e8412a 70%, transparent 100%);
+}
+
+/* ── Inner layout ── */
+.footerInner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 32px 48px;
+  display: grid;
+  grid-template-columns: 1.8fr 1px 1.1fr 1fr 1.2fr;
+  gap: 0 40px;
+  align-items: start;
+}
+
+/* ── Vertical divider ── */
+.vDivider {
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.12) 80%, transparent);
+  align-self: stretch;
+}
+
+/* ── Column ── */
+.col {}
+
+/* ── Brand column ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logoIcon {
+  font-size: 22px;
+  color: #e8412a;
+  line-height: 1;
+}
+
+.logoText {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: #f0ede8;
+  text-transform: uppercase;
+}
+
+.logoText em {
+  font-style: normal;
+  color: #e8412a;
+}
+
+.brandDesc {
+  color: #8a9099;
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 260px;
+  margin-bottom: 24px;
+}
+
+/* ── Socials ── */
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socialBtn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a9099;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.socialBtn:hover {
+  border-color: #e8412a;
+  color: #e8412a;
+  background: rgba(232, 65, 42, 0.08);
+}
+
+/* ── Column titles ── */
+.colTitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f0ede8;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+
+.colTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 28px;
+  height: 1px;
+  background: #e8412a;
+}
+
+/* ── Info list (contact) ── */
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #8a9099;
+  font-size: 13px;
+}
+
+.infoList strong {
+  color: #c8cdd8;
+  font-weight: 500;
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: #e8412a;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Link list (support) ── */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linkList a {
+  color: #8a9099;
+  text-decoration: none;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.linkList a::before {
+  content: '—';
+  font-size: 11px;
+  color: #e8412a;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s;
+}
+
+.linkList a:hover {
+  color: #f0ede8;
+}
+
+.linkList a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Newsletter ── */
+.newsletterDesc {
+  color: #8a9099;
+  font-size: 12.5px;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 0;
+  margin-bottom: 16px;
+}
+
+.emailInput {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  padding: 9px 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  color: #f0ede8;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.emailInput::placeholder { color: #4a5060; }
+.emailInput:focus { border-color: rgba(232, 65, 42, 0.5); }
+
+.subscribeBtn {
+  background: #e8412a;
+  border: 1px solid #e8412a;
+  border-radius: 0 6px 6px 0;
+  padding: 9px 16px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.subscribeBtn:hover { background: #d03520; }
+
+/* ── Badges ── */
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #8a9099;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  padding: 3px 10px;
+}
+
+/* ── Bottom bar ── */
+.bottomBar {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #4a5060;
+  margin: 0;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.bottomLinks a {
+  font-size: 12px;
+  color: #4a5060;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bottomLinks a:hover { color: #8a9099; }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .footerInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 40px;
+  }
+  .vDivider { display: none; }
+  .brandCol { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  .footerInner {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 32px;
+    gap: 28px;
+  }
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+    gap: 8px;
+  }
+}
